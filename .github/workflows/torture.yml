@@ -27,6 +27,11 @@ jobs:
         - name: torture
           install:
           configure: --with-openssl --enable-debug
+          tflags: -n -t --shallow=25 !FTP
+        - name: torture-ftp
+          install:
+          configure: --with-openssl --enable-debug
+          tflags: -n -t --shallow=20 FTP
 
     steps:
     - run: |
